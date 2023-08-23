@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html,
+body,
+.intro {
+    height: 92vh;
+}
+
+.homeBg {
+    background: url('bg/giphy.gif') center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.home-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, .2);
+    text-shadow: 4px 5px 1px rgb(0, 255, 128);
+}
+
+.my-card {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #c0bebb, #089b51);
+}
+
+.my-card img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 350px;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.my-card:hover img {
+    left: 80%;
+    height: 400px;
+}
+
+.my-card .my-content {
+    position: relative;
+    width: 50%;
+    left: 20%;
+    padding: 20px 20px 20px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.my-card:hover .my-content {
+    position: relative;
+    left: 0%;
+    opacity: 1;
+    visibility: visible;
+}
+
+.my-card .my-content h2 {
+    position: absolute;
+    left: 25px;
+    bottom: 100px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+
+.my-card .my-content p {
+    color: #fff;
+}
+
+.my-card .my-content button {
+    position: absolute;
+    display: inline-block;
+    color: #111;
+    padding: 10px 20px;
+    top: 100px;
+    left: 25px;
+    z-index: 200;
+    border-radius: 10px;
+    background: #fff;
+    margin-top: 10px;
+}
+
+/* mobile css  */
+@media (max-width: 991px) {
+    .my-card {
+        position: relative;
+        width: auto;
+        max-width: 600px;
+        transition: 0.5s;
+        align-items: flex-start;
+    }
+
+    .my-card:hover {
+        height: 600px;
+    }
+
+    .my-card:hover img {
+        left: 50%;
+        height: 350px;
+    }
+
+    .my-card .my-content {
+        width: 100%;
+        left: 0;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 420px) {
+    .my-card .my-content {
+        padding: 30px;
+    }
+
+    .my-card:hover img {
+        height: 300px;
+    }
+}
+
+.logo-image {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floating 2s ease infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.imgLine {
+    display: block;
+    width: 25%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, .2);
+    margin: 5px auto;
+}
+
+.centered-text {
+    text-align: justify;
+    display: block;
+}
+
+.pulseButton{
+    animation: Pulse 2s cubic-bezier(0.6, 0.2, 0.4, 1) 0.5s infinite;
+}
+
+@keyframes Pulse {
+    from {
+        box-shadow: 0 0 0 0 #00ff80;
+    }
+
+    to {
+        box-shadow: 0 0 4px 20px transparent;
+    }
+}
